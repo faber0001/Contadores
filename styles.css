@@ -1,0 +1,28 @@
+body{
+
+    background-color: #000;
+    color:#ffffff;
+}
+
+
+/* Estilos para invertir colores en el textarea */
+#respuesta {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+#respuesta, #NumeroDeDatos, #EntradaNumero {
+    width: 100px; /* o el ancho que desees */
+    height: 50px; /* o la altura que desees */
+    margin: 10px; /* o el margen que desees */
+    border: 1px solid #000; /* o el borde que desees */
+  }
+  
+  #contenedor-horizontal {
+    display: flex;
+  }
+  
+#output{
+    background-color: #000;
+    color:#ffffff;
+}

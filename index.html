@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Proyecto HTML</title>
+
+</head>
+<body>
+    <div id="contenedor-horizontal">
+<!-- Div con ID "Respuesta" para el textarea -->
+<div id="respuesta">
+    <label for="output">Respuestas:</label>
+    <br>
+    <textarea id="output" rows="38" cols="15" readonly></textarea>
+</div>
+<!-- Div con ID "NumeroDeDatos" y un input de usuario -->
+<div id="NumeroDeDatos">
+    <label for="userInput">Número de Datos:</label>
+    <br>
+    <input type="text" id="userInput">
+    <br>
+    <button onclick="sendData()">SEND</button>
+    <button onclick="clearData()">CLEAR</button>
+    <button onclick="closeWindow()">CLOSE</button>
+</div>
+<!-- Div con ID "EntradaNumero" y un input de usuario -->
+<div id="EntradaNumero">
+    <label for="numeroInput">Ingrese número:</label>
+    <br>
+    <input type="text" id="numeroInput" maxlength="2" style="width: 6em; font-size: 1.2em;">
+    <br>
+    <button onclick="sendNumero()">SEND</button>
+    <button onclick="clearNumero()">CLEAR</button>
+    <button onclick="closeWindow()">CLOSE</button>
+</div>
+</div>
+<script src="js.js"></script>
+</body>
