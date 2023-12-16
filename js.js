@@ -3,7 +3,6 @@ var c0 = 0, c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0, c8 = 0, c9 =
 var c10 = 0, c11 = 0, c12 = 0, c13 = 0, c14 = 0, c15 = 0, c16 = 0, c17 = 0, c18 = 0, c19 = 0;
 var c20 = 0, c21 = 0, c22 = 0, c23 = 0, c24 = 0, c25 = 0, c26 = 0, c27 = 0, c28 = 0, c29 = 0;
 var c30 = 0, c31 = 0, c32 = 0, c33 = 0, c34 = 0, c35 = 0, c36 = 0, c37 = 0;
-var general=0;
 
 // Variable para almacenar el número de iteraciones obtenido del primer input
 var numeroDeIteraciones;
@@ -35,7 +34,6 @@ function sendNumero() {
 
     // Realizar acciones adicionales según el número ingresado
     var index = parseInt(numeroInput);
-    general++;
     switch (index) {
       case 0:
       case 1:
@@ -112,8 +110,7 @@ function sendNumero() {
     // Agregar un retardo de 500 milisegundos (0.5 segundos) antes de imprimir en el textarea
     setTimeout(imprimirEnTextarea, 500);
   } else if (contadorIteraciones > 4) {
-    // Si el contador es mayor que 4, reiniciar contadores y limpiar textarea inmediatamente
-    resetContadores();
+    // Si el contador es mayor que 4, limpiar textarea inmediatamente
     imprimirEnTextarea();
   }
 }
@@ -131,16 +128,11 @@ function imprimirEnTextarea() {
         var contador = window['c' + i];
         // Verificar las condiciones para imprimir en el textarea
         if (contador > 2 && contador <= 4) {
-          resultadoTextarea.value += "C" + i + ": " + contador +"||"+general + "\n";
-        }
-  
-        // Reiniciar el contador si es mayor a 3
-        if (contador > 3) {
-          window['c' + i] = 0;
+          resultadoTextarea.value += "C" + i + ": " + contador + "\n";
         }
       }
     }
-  }
+}
   
 function clearData() {
     document.getElementById('userInput').value = '';
