@@ -104,7 +104,7 @@ function sendNumero() {
 
   if (contadorIteraciones > 2 && contadorIteraciones <= 4) {
     // Obtener la marca de tiempo actual
-    var currentTime = new Date();
+    var currentTime =  window['f' + index];
 
     // Asignar la marca de tiempo a la variable correspondiente
     window['f' + numeroInput] = currentTime;
