@@ -150,6 +150,8 @@ function closeWindow() {
 
 // ... (código posterior)
 function clearNumero() {
+    
+    console.log("Limpiando número de entrada");  // Agrega esta línea para depuración
     document.getElementById('numeroInput').value = '';
 }
 
