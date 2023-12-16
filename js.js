@@ -144,7 +144,7 @@ function imprimirEnTextarea() {
       var contador = window['c' + i];
       // Verificar las condiciones para imprimir en el textarea
       if (contador > 2 && contador <= 4) {
-        resultadoTextarea.value += "C" + i + ": " + contador + " - MT: " + window['f' + i] + "\n";
+        resultadoTextarea.value += "C" + i + ": " + " - MT: " + window['f' + i] + "\n";
       }
     }
   }
