@@ -24,11 +24,14 @@ body{
   
 #output{
     background-color: #000;
-    color:#ffffff;
+    color:#6fde0d;
 }
 #userInput{
     color: #6fde0d;
 }
 #NumeroDeDatos{
     background-color: #000;
+}
+#numeroInput{
+        color: #6fde0d;
 }

@@ -138,6 +138,7 @@ function sendNumero() {
 // Resto del código
 
 function imprimirEnTextarea() {
+<<<<<<< HEAD
   var resultadoTextarea = document.getElementById('output');
   if (resultadoTextarea) {
     // Limpiar el contenido actual del textarea
@@ -149,6 +150,20 @@ function imprimirEnTextarea() {
       // Verificar las condiciones para imprimir en el textarea
       if (contador > 2 && contador <= 4) {
         resultadoTextarea.value += "C" + i + ": "  + " - MT: " + window['f' + i] + "\n";
+=======
+    var resultadoTextarea = document.getElementById('output');
+    if (resultadoTextarea) {
+      // Limpiar el contenido actual del textarea
+      resultadoTextarea.value = '';
+  
+      // Iterar sobre todos los contadores
+      for (var i = 0; i <= 37; i++) {
+        var contador = window['c' + i];
+        // Verificar las condiciones para imprimir en el textarea
+        if (contador > 2 && contador <= 4) {
+          resultadoTextarea.value += "C" + i + ": " + contador +"||"+ contadorIteraciones+ "\n";
+        }
+>>>>>>> 114c920ebd63184efccd62ddedf5a54d5ebb17c1
       }
     }
   }
