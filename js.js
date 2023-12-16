@@ -134,15 +134,28 @@ function imprimirEnTextarea() {
     }
 }
   
-function clearData() {
-    document.getElementById('userInput').value = '';
-    // Limpiar también el número de iteraciones y el contador
-    numeroDeIteraciones = undefined;
-    contadorIteraciones = 0;
+// ... (código anterior)
 
-    // Limpiar el contenido actual del textarea
-    var resultadoTextarea = document.getElementById('output');
-    if (resultadoTextarea) {
-        resultadoTextarea.value = '';
-    }
+// Resto del código
+
+function clearDataDiv1() {
+    // Limpiar el contenido del input en el Div1
+    document.getElementById('userInput').value = '';
 }
+
+function closeWindow() {
+    // Ocultar el Div2 al cerrar la ventana
+    document.getElementById('EntradaNumero').style.display = 'none';
+}
+
+// ... (código posterior)
+function clearNumero() {
+    document.getElementById('numeroInput').value = '';
+}
+
+function closeWindow() {
+    // Ocultar ambos divs al hacer clic en el botón CLOSE
+    document.getElementById('NumeroDeDatos').style.display = 'none';
+    document.getElementById('EntradaNumero').style.display = 'none';
+}
+
