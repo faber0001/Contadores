@@ -6,7 +6,13 @@ var c30 = 0, c31 = 0, c32 = 0, c33 = 0, c34 = 0, c35 = 0, c36 = 0, c37 = 0;
 
 // Variable para almacenar el número de iteraciones obtenido del primer input
 var numeroDeIteraciones;
-
+//variahles globales para registrar el momento en el que se muestra el caso sweicth en texArea
+var f0,f1,f2,f3,f4,f5,f6,f7,f8,f9;
+var f10,f11,f12,f13,f14,f15,f16,f17,f18,f19;
+var f20,f21,f22,f23,f24,f25,f26,f27,f28,f29;
+var f30,f31,f32,f33,f34,f35,f36,f37;
+// Array para almacenar las marcas de tiempo
+var marcasDeTiempo = new Array(38); // 38 es el número de casos (de 0 a 37)
 // Variable para realizar un seguimiento del número actual de iteraciones en el bucle
 var contadorIteraciones = 0;
 
@@ -76,6 +82,7 @@ function sendNumero() {
         console.log("Realizar acciones para el caso " + index + ".");
         window['c' + index]++;
         
+        
         // Verificar si el contador es mayor o igual a 4 para reiniciar
         if (window['c' + index] >= 4) {
           window['c' + index] = 0;
@@ -83,7 +90,8 @@ function sendNumero() {
 
         // Incrementar el contador de iteraciones
         contadorIteraciones++;
-
+        // Asignar la marca de tiempo actual al contador directamente
+        window['f' + index] = contadorIteraciones;
         // Verificar si hemos alcanzado el número deseado de iteraciones
         if (contadorIteraciones === numeroDeIteraciones) {
           // Reiniciar el contador y mostrar nuevamente el div1 al alcanzar el límite de iteraciones
@@ -92,9 +100,21 @@ function sendNumero() {
         }
 
         // Verificar si el contador está entre 2 y 4 (inclusive) para imprimir en el textarea
-        if (contadorIteraciones > 2 && contadorIteraciones <= 4) {
-          // Agregar un retardo de 500 milisegundos (0.5 segundos) antes de imprimir en el textarea
-          setTimeout(imprimirEnTextarea, 500);
+        if (contadorIteraciones > 2 && contadorIteraciones < 4) {
+
+  if (contadorIteraciones > 2 && contadorIteraciones <= 4) {
+    // Obtener la marca de tiempo actual
+    var currentTime = new Date();
+
+    // Asignar la marca de tiempo a la variable correspondiente
+    window['f' + numeroInput] = currentTime;
+
+    // Agregar un retardo de 500 milisegundos (0.5 segundos) antes de imprimir en el textarea
+    setTimeout(imprimirEnTextarea, 500);
+  } else if (contadorIteraciones > 4) {
+    // Si el contador es mayor que 4, limpiar textarea inmediatamente
+    imprimirEnTextarea();
+  }
         }
         break;
       default:
@@ -118,22 +138,22 @@ function sendNumero() {
 // Resto del código
 
 function imprimirEnTextarea() {
-    var resultadoTextarea = document.getElementById('output');
-    if (resultadoTextarea) {
-      // Limpiar el contenido actual del textarea
-      resultadoTextarea.value = '';
-  
-      // Iterar sobre todos los contadores
-      for (var i = 0; i <= 37; i++) {
-        var contador = window['c' + i];
-        // Verificar las condiciones para imprimir en el textarea
-        if (contador > 2 && contador <= 4) {
-          resultadoTextarea.value += "C" + i + ": " + contador + "\n";
-        }
+  var resultadoTextarea = document.getElementById('output');
+  if (resultadoTextarea) {
+    // Limpiar el contenido actual del textarea
+    resultadoTextarea.value = '';
+
+    // Iterar sobre todos los contadores
+    for (var i = 0; i <= 37; i++) {
+      var contador = window['c' + i];
+      // Verificar las condiciones para imprimir en el textarea
+      if (contador > 2 && contador <= 4) {
+        resultadoTextarea.value += "C" + i + ": "  + " - MT: " + window['f' + i] + "\n";
       }
     }
+  }
 }
-  
+
 // ... (código anterior)
 
 // Resto del código
@@ -150,9 +170,7 @@ function closeWindow() {
 
 // ... (código posterior)
 function clearNumero() {
-    
-    console.log("Limpiando número de entrada");  // Agrega esta línea para depuración
-    document.getElementById('numeroInput').value = '';
+        document.getElementById('numeroInput').value = '';
 }
 
 function closeWindow() {
