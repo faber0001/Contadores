@@ -6,11 +6,7 @@ var c30 = 0, c31 = 0, c32 = 0, c33 = 0, c34 = 0, c35 = 0, c36 = 0, c37 = 0;
 
 // Variable para almacenar el número de iteraciones obtenido del primer input
 var numeroDeIteraciones;
-//variahles globales para registrar el momento en el que se muestra el caso sweicth en texArea
-var f0,f1,f2,f3,f4,f5,f6,f7,f8,f9;
-var f10,f11,f12,f13,f14,f15,f16,f17,f18,f19;
-var f20,f21,f22,f23,f24,f25,f26,f27,f28,f29;
-var f30,f31,f32,f33,f34,f35,f36,f37;
+
 // Array para almacenar las marcas de tiempo
 var marcasDeTiempo = new Array(38); // 38 es el número de casos (de 0 a 37)
 // Variable para realizar un seguimiento del número actual de iteraciones en el bucle
