@@ -19,7 +19,7 @@
 <div id="NumeroDeDatos">
     <label for="userInput">Número de Datos:</label>
     <br>
-    <input type="text" id="userInput">
+    <input type="text" id="userInput" autofocus >
     <br>
     <button onclick="sendData()">SEND</button>
     <button onclick="clearDataDiv1()">CLEAR</button>
@@ -28,12 +28,13 @@
 <div id="EntradaNumero">
     <label for="numeroInput">Ingrese número:</label>
     <br>
-    <input type="text" id="numeroInput" maxlength="2" style="width: 6em; font-size: 1.2em;">
+    <input type="text" id="numeroInput"   maxlength="2" style="width: 6em; font-size: 1.2em;">
     <br>
     <button onclick="sendNumero()">SEND</button>
     <button onclick="clearNumero()">CLEAR</button>
     <button onclick="closeWindow()">CLOSE</button>
 </div>
 </div>
+
 <script src="js.js"></script>
 </body>

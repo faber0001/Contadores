@@ -12,7 +12,11 @@ var marcasDeTiempo = new Array(38); // 38 es el número de casos (de 0 a 37)
 // Variable para realizar un seguimiento del número actual de iteraciones en el bucle
 var contadorIteraciones = 0;
 
+ 
+  
+
 function sendData() {
+  
   var userInput = document.getElementById('userInput').value;
   if (/^\d+$/.test(userInput) && parseInt(userInput) > 0) {
     numeroDeIteraciones = parseInt(userInput);
@@ -21,9 +25,11 @@ function sendData() {
   } else {
     alert("Por favor, ingrese un número entero positivo mayor que cero.");
   }
+
 }
 
 function sendNumero() {
+  
   // Validar que el usuario haya ingresado el número de iteraciones
   if (numeroDeIteraciones === undefined) {
     alert("Por favor, ingrese primero el número de iteraciones.");
@@ -122,13 +128,14 @@ function sendNumero() {
   }
 
   // Verificar si el contador está entre 2 y 4 (inclusive) para imprimir en el textarea
-  if (contadorIteraciones > 2 && contadorIteraciones <= 4) {
+  if (contadorIteraciones > 1 && contadorIteraciones <= 3) {
     // Agregar un retardo de 500 milisegundos (0.5 segundos) antes de imprimir en el textarea
     setTimeout(imprimirEnTextarea, 500);
-  } else if (contadorIteraciones > 4) {
+  } else if (contadorIteraciones > 3) {
     // Si el contador es mayor que 4, limpiar textarea inmediatamente
     imprimirEnTextarea();
   }
+  clearNumero();
 }
 
 // Resto del código
@@ -143,8 +150,8 @@ function imprimirEnTextarea() {
     for (var i = 0; i <= 37; i++) {
       var contador = window['c' + i];
       // Verificar las condiciones para imprimir en el textarea
-      if (contador > 2 && contador <= 4) {
-        resultadoTextarea.value += "C" + i + ": " + " - MT: " + window['f' + i] + "\n";
+      if (contador > 1 && contador < 3) {
+        resultadoTextarea.value += "N " + i + " || " + "MT " + window['f' + i] + "\n";
       }
     }
   }
@@ -167,6 +174,7 @@ function closeWindow() {
 // ... (código posterior)
 function clearNumero() {
         document.getElementById('numeroInput').value = '';
+        numeroInput.focus();
 }
 
 function closeWindow() {
@@ -174,4 +182,8 @@ function closeWindow() {
     document.getElementById('NumeroDeDatos').style.display = 'none';
     document.getElementById('EntradaNumero').style.display = 'none';
 }
+
+ 
+  
+
 
