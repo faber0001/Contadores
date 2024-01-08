@@ -48,7 +48,7 @@ function sendNumero() {
     contadores[index]++;
 
     // Verificar condiciones específicas para cada caso
-    if (contadores[index] > 1 && contadores[index] < 4) {
+    if (contadores[index] > 2 && contadores[index] < 4) {
       var currentTime = marcasDeTiempo[index];
       marcasDeTiempo[index] = currentTime;
       setTimeout(imprimirEnTextarea, 500);
@@ -79,7 +79,7 @@ function imprimirEnTextarea() {
 
     for (var i = 0; i <= 37; i++) {
       var contador = contadores[i];
-      if (contador > 1 && contador < 4) {
+      if (contador > 2 && contador < 4) {
         resultadoTextarea.value += "N " + i + " || " + "MT " + marcasDeTiempo[i] + "\n";
       }
     }
