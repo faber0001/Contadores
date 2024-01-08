@@ -1,3 +1,16 @@
+
+// Definir la contraseña deseada
+var contrasenaGuardada = "123";
+
+// Solicitar al usuario que ingrese la contraseña
+var passwordUsuario = prompt("Por favor, ingrese la contraseña:");
+
+// Verificar si la contraseña ingresada es correcta
+if (passwordUsuario === contrasenaGuardada) {
+    alert("Contraseña correcta. Puedes continuar con el programa.");
+} else {
+    alert("Contraseña incorrecta. Acceso denegado.");
+}
 // Contadores inicializados a 0
 var contadores = Array.from({ length: 38 }, () => 0);
 
