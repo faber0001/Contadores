@@ -82,7 +82,7 @@ function imprimirEnTextarea() {
 
     for (var i = 0; i <= 37; i++) {
       var contador = contadores[i];
-      if (contador > 2 && contador < 4) {
+      if (contador > 1 && contador < 3) {
         resultadoTextarea.value += "N " + i + " || " + "MT " + marcasDeTiempo[i] + "\n";
       }
     }
