@@ -1,5 +1,5 @@
 // Definir la contraseña deseada
-var contrasenaGuardada = "1979";
+var contrasenaGuardada = "1023";
 
 do {
     // Solicitar al usuario que ingrese la contraseña
