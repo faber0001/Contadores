@@ -51,11 +51,11 @@ function sendNumero() {
     contadores[index]++;
 
     // Verificar condiciones específicas para cada caso
-    if (contadores[index] > 1 && contadores[index] < 3) {
+    if (contadores[index] > 2 && contadores[index] < 4) {
       var currentTime = marcasDeTiempo[index];
       marcasDeTiempo[index] = currentTime;
       setTimeout(imprimirEnTextarea, 500);
-    } else if (contadores[index] >= 5) {
+    } else if (contadores[index] >= 3) {
       contadores[index] = 1; // Reiniciar a 1 si es mayor o igual a 2
       borrarDelTextarea(index); // Llamar a la función para borrar del textarea
     }
@@ -82,7 +82,7 @@ function imprimirEnTextarea() {
 
     for (var i = 0; i <= 37; i++) {
       var contador = contadores[i];
-      if (contador > 1 && contador < 3) {
+      if (contador > 2 && contador < 4) {
         resultadoTextarea.value += "N " + i + " || " + "MT " + marcasDeTiempo[i] + "\n";
       }
     }
