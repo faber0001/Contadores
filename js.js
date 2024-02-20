@@ -55,8 +55,8 @@ function sendNumero() {
       var currentTime = marcasDeTiempo[index];
       marcasDeTiempo[index] = currentTime;
       setTimeout(imprimirEnTextarea, 500);
-    } else if (contadores[index] >= 4) {
-      contadores[index] = 1; // Reiniciar a 1 si es mayor o igual a 3
+    } else if (contadores[index] >= 3) {
+      contadores[index] = 1; // Reiniciar a 1 si es mayor o igual a 2
       borrarDelTextarea(index); // Llamar a la función para borrar del textarea
     }
 
