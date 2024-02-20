@@ -113,3 +113,4 @@ function borrarDelTextarea(index) {
     resultadoTextarea.value = resultadoTextarea.value.replace("N " + index + " || " + "MT " + marcasDeTiempo[index] + "\n", "");
   }
 }
+
