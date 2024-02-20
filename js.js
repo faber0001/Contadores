@@ -1,3 +1,19 @@
+// Definir la contraseña deseada
+var contrasenaGuardada = "1023";
+
+do {
+    // Solicitar al usuario que ingrese la contraseña
+    var passwordUsuario = prompt("Por favor, ingrese la contraseña:");
+
+    // Verificar si la contraseña ingresada es correcta
+    if (passwordUsuario === contrasenaGuardada) {
+        alert("Contraseña correcta. Puedes continuar con el programa.");
+        break; // Salir del bucle cuando la contraseña es correcta
+    } else {
+        alert("Contraseña incorrecta. Vuelve a intentar.");
+    }
+} while (true); // El bucle se repetirá hasta que la contraseña sea correcta
+
 // Contadores inicializados a 0
 var contadores = Array.from({ length: 38 }, () => 0);
 
