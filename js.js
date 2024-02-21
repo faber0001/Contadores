@@ -23,6 +23,7 @@ var numeroDeIteraciones;
 var marcasDeTiempo = new Array(38); // 38 es el número de casos (de 0 a 37)
 // Variable para realizar un seguimiento del número actual de iteraciones en el bucle
 var contadorIteraciones = 0;
+var c = 0; // Contador general inicializado en 0
 
 function sendData() {
   var userInput = document.getElementById('userInput').value;
@@ -47,8 +48,11 @@ function sendNumero() {
     console.log("Número válido ingresado:", numeroInput);
 
     var index = parseInt(numeroInput);
+    history(index);
     console.log("Realizar acciones para el caso " + index + ".");
     contadores[index]++;
+    c++;
+    mostrarContadorEnDOM(c); // Mostrar el contador actualizado en el DOM
 
     // Verificar condiciones específicas para cada caso
     if (contadores[index] > 1 && contadores[index] < 3) {
@@ -59,8 +63,9 @@ function sendNumero() {
       contadores[index] = 1; // Reiniciar a 1 si es mayor o igual a 3
       borrarDelTextarea(index); // Llamar a la función para borrar del textarea
     }
-
+   
     contadorIteraciones++;
+   
     marcasDeTiempo[index] = contadorIteraciones;
 
     if (contadorIteraciones === numeroDeIteraciones) {
@@ -111,6 +116,43 @@ function borrarDelTextarea(index) {
   var resultadoTextarea = document.getElementById('output');
   if (resultadoTextarea) {
     resultadoTextarea.value = resultadoTextarea.value.replace("N " + index + " || " + "MT " + marcasDeTiempo[index] + "\n", "");
+  }
+}
+
+var historyArray = []; // Declarar el array fuera de la función para que pueda ser accedido por ambas funciones
+
+function history(index) {
+  // No necesitas declarar un array dentro de esta función
+  historyArray.unshift(index); // Agrega el elemento index al principio del array
+  mostrarHistoricoEnDOM(); // Llamar a la función para actualizar la visualización en el DOM
+}
+
+function mostrarHistoricoEnDOM() {
+  var historicoDiv = document.getElementById("historico");
+  if (historicoDiv) {
+    // Limpiamos el contenido del div antes de mostrar el historial
+    historicoDiv.innerHTML = "";
+
+    // Creamos un texto que contenga los elementos del array separados por el carácter personalizado
+    var textoHistorico = "[" + historyArray.join("|") + "]";
+
+    // Creamos un elemento de texto para mostrar el historial con el formato deseado
+    var texto = document.createTextNode(textoHistorico);
+
+    // Añadimos el texto al div historico
+    historicoDiv.appendChild(texto);
+  } else {
+    console.error("No se encontró el elemento con el ID 'historico'");
+  }
+}
+
+function mostrarContadorEnDOM(contador) {
+  var registroDiv = document.getElementById("registro");
+  if (registroDiv) {
+    // Actualizamos el contenido del div con el contador
+    registroDiv.textContent = "Cont: " + contador;
+  } else {
+    console.error("No se encontró el elemento con el ID 'registro'");
   }
 }
 
