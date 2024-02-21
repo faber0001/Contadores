@@ -119,6 +119,7 @@ function borrarDelTextarea(index) {
   }
 }
 
+
 var historyArray = []; // Declarar el array fuera de la función para que pueda ser accedido por ambas funciones
 
 function history(index) {
@@ -155,4 +156,5 @@ function mostrarContadorEnDOM(contador) {
     console.error("No se encontró el elemento con el ID 'registro'");
   }
 }
+
 
