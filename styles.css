@@ -29,12 +29,14 @@ body{
 }
 #userInput{
     color: #6fde0d;
+    background-color: #000;
 }
 #NumeroDeDatos{
     background-color: #000;
 }
 #numeroInput{
         color: #6fde0d;
+        background-color: #000;
 }
 #historico{
     color: aqua;
